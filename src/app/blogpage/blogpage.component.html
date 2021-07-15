@@ -1,0 +1,29 @@
+<div class="container d-flex justify-content-end ">
+  <button class="btn btn-outline-warning" (click)="sortArray()">Sort</button>
+</div>
+
+
+
+
+
+<div class="container row">
+  <div
+    *ngFor="let val of places"
+    class="container-fluid col-lg-3 col-md-6 col-sm-12 d-flex justify-content-center" style="margin-bottom: 5vh;"
+  >
+  <div class="container d-flex justify-content-between" style="margin-bottom: 5vh;">
+    <div class="card" style="width: 18rem; height: 100%;">
+      <img src="{{val.image}}" class="card-img-top" alt="..." style="height: 188px;"/>
+      <div class="card-body">
+        <h2>{{val.name}}</h2>
+        <p class="card-text">
+          {{val.cityName}}
+        </p>
+        <p>Tickets: {{val.price | currency}}</p>
+        <p class="card-text"><small class="text-muted">{{ randomDate(val.date) }} {{val.details}}</small></p>
+
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
