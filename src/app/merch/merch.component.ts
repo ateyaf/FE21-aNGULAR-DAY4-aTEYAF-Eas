@@ -21,13 +21,7 @@ export class MerchComponent implements OnInit {
     this.cartService.addToCart(merchandise);
   }
 
-  total() {
-    let total = 0;
-    for (let val of merchandise) {
-      total = total + val.productPrice;
-    }
-    return total;
-  }
+  
 
 
     ngOnInit(): void {

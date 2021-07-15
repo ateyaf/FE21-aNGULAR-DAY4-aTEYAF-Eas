@@ -13,7 +13,7 @@ import { FormBuilder } from '@angular/forms';
 export class CartComponent implements OnInit {
   items: any;
   checkoutForm: any;
-
+  total: any = 0;
   constructor(private cartService: CartService, private formBuilder: FormBuilder) {
     this.checkoutForm = this.formBuilder.group({
       name: '',
@@ -21,9 +21,13 @@ export class CartComponent implements OnInit {
     });
   }
 
+  // calculateTotal() {
+  //   this.total = this.cartService.total();
+  // }
 
   ngOnInit(): void {
     this.items = this.cartService.getItems();
+    this.total = this.cartService.total();
   }
 
 

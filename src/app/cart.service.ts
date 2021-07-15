@@ -17,10 +17,18 @@ export class CartService {
 
   }
 
-  total(merchandise: {productName: string, productPrice: number, productDetail:string, productImage:string}) {
-   this.items.productPrice;
-    return
+  // total(merchandise: {productName: string, productPrice: number, productDetail:string, productImage:string}) {
+  //  this.items.productPrice;
+  //   return
     
+  // }
+
+  total() {
+    let total = 0;
+    for (let val of this.items) {
+      total = total + val.productPrice;
+    }
+    return total;
   }
 
   getItems() {
